@@ -12,7 +12,7 @@ ProtectHome=true
 ProtectKernelTunables=true
 ProtectControlGroups=true
 WorkingDirectory=/opt/twilio-discord
-ExecStart=/usr/bin/python3 app.py -p 4567 -w https://discord.com/api/webhooks/...
+ExecStart=/usr/bin/python3 -u app.py -p 4567 -w https://discord.com/api/webhooks/...
 Restart=always
 
 [Install]
