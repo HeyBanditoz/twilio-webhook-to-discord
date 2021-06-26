@@ -1,0 +1,19 @@
+[Unit]
+Description=Twilio -> Discord Webhook
+After=network.target apache2.service
+# replace with nginx or other friends
+
+[Service]
+User=discord
+Group=discord
+ProtectSystem=full
+PrivateTmp=true
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+WorkingDirectory=/opt/twilio-discord
+ExecStart=/usr/bin/python3 app.py -p 4567 -w https://discord.com/api/webhooks/...
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
